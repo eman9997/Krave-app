@@ -1,8 +1,8 @@
-<html lang="en">
+
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 <div class="container">
   <nav>
-    <div id="close"><i class="fas fa-times"></i></div>
+    <div id="close"><i class="fas fa-times" (click)="sideBarOpened=false"></i></div>
     <div class="user">
       <img src="https://loremflickr.com/200/200/boy" alt="">
       <div class="info">
@@ -19,21 +19,33 @@
       <li><i class="fas fa-power-off"></i>Sign Out</li>
     </ul>
   </nav>
-  <main id="main" class="shrink">
+  <!-- <main id="main" class="shrink"> -->
+    <!-- <main id="main" [ngClass]="{shrink: sideBarOpened }"]> -->
+      <main id="main" [ngClass]="sideBarOpened == true ? 'shrink' : ''">
     <header>
-      <i id="btn" class="fas fa-bars"></i>
+      <i id="btn" class="fas fa-bars" (click)="sideBarOpened = !sideBarOpened"></i>
       <h2>My Fridge</h2>
       <i></i>
     </header>
     <div class="content">
-      <p class="ingredMsg">? Ingredients</p>  <div class="space"><button id="login-btn"> ADD NEW + </button></div>
+      
+      <!-- if user has ingrediants -->
+      <div *ngIf="ingrediantList.length; else emptyFridge">
+        Welcome back, friend.
+      </div>
+      
+      <!-- if user has no ingrediant in his/her fridge -->
+      <ng-template #emptyFridge>
+        <div class="imgSection">
+          <div class="emptyFridge"></div>
+          <p class="centerTextAndFontFamily">Your Fridge is Empty</p>
+        </div>
+      </ng-template>
     
     </div>
   </main>
 </div>
-<body>
- 
-</body>
-</html>
+
+
 
 

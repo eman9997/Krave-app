@@ -9,26 +9,12 @@ $black: #222222 !default;
 
 *, *:before, *:after{
   box-sizing: border-box;
-}
-body{
   font-family: 'Lato', sans-serif;
 }
 
-/***** For Smartphones *******/
-
-/***** For Tablets *******/
-@media screen and (min-width: 480px) {
-    
-}
-
-/***** For Desktop Monitors *******/
-@media screen and (min-width: 768px) {
-   
-}
-
-
 .container{
-  position: relative;
+//property below creates weird white space on top
+  // position: relative;
   overflow: hidden;
   width: 100vw;
   height: 100vh;
@@ -151,33 +137,36 @@ main.shrink{
   background-color: darken($white, 5);
   flex: 1;
 }
-.ingredMsg{
-  padding-left: 3%;
-   display: inline-block;
-  color: red;
-  size: 3em;
-}
-
-.space, .ingredMsg{
-  display: inline-block;
-}
-.space{
-  float: right;
-  padding: 4%;
-}
-#login-btn{
-  size: 30%;
-   border: none;
-  color: red;
-  padding: 1em ;
-  font-size: 1em;
-  font-weight: 300;
-  
+.imgSection{
+  margin-top: 4%;
   width: 100%;
-  border-radius: 55px;
+  height: 35vh;
+//You can see where this section begins and ends by removing comment below
+  // border: 5px solid #F71442;
+}
+.emptyFridge{
+  margin: 0 40%;
+  width: 25%;
+  height: 30vh;
+  // border: 5px solid #F71442;
+  background-image: url(https://krave-csudh.firebaseapp.com/assets/states/emptyFridge-color.svg);
+  background-repeat: no-repeat;
+}
+.centerTextAndFontFamily{
+  text-align: center;
+}
 
-  background: -webkit-gradient(linear, left top, right top, from(#F98340), to(#F71442));
-  background: white;
-  background-size: 100%;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+
+
+
+/***** For Smartphones *******/
+
+/***** For Tablets *******/
+@media screen and (min-width: 480px) {
+    
+}
+
+/***** For Desktop Monitors *******/
+@media screen and (min-width: 768px) {
+   
 }

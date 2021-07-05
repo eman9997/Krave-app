@@ -5,11 +5,18 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
 
-  constructor() { }
+export class DashboardComponent implements OnInit {
+  sideBarOpened= false;
+  // temporary list just to keep going on the UI
+  ingrediantList:string[]=[];
+
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }
+
 
 }
