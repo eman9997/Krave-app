@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class DashboardComponent implements OnInit {
-  sideBarOpened= false;
+  sideBarOpened = false;
   // temporary list just to keep going on the UI
-  ingrediantList:string[]=[];
+  ingredientList: string[] = [];
 
   constructor() {
 

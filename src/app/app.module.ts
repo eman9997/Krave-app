@@ -8,6 +8,10 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { NavbarComponent } from './partial/navbar/navbar.component';
 import { LoaderComponent } from './partial/loader/loader.component';
 
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { ChefService } from './services/chef.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -15,13 +19,15 @@ import { LoaderComponent } from './partial/loader/loader.component';
     DashboardComponent,
     FavoritesComponent,
     NavbarComponent,
-    LoaderComponent
+    LoaderComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ChefService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

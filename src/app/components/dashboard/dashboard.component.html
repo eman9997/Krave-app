@@ -28,13 +28,18 @@
       <i></i>
     </header>
     <div class="content">
-      
+
+      <!-- ingredient search bar -->
+      <div>
+        <app-search-bar></app-search-bar>
+      </div>
+
       <!-- if user has ingrediants -->
-      <div *ngIf="ingrediantList.length; else emptyFridge">
+      <div *ngIf="ingredientList.length; else emptyFridge">
         Welcome back, friend.
       </div>
       
-      <!-- if user has no ingrediant in his/her fridge -->
+      <!-- if user has no ingredients in their fridge -->
       <ng-template #emptyFridge>
         <div class="imgSection">
           <div class="emptyFridge"></div>
