@@ -1,8 +1,26 @@
-<input type="text" name="search-bar" class="search-bar" (keyup)="sendData($event)">
-<section class="search-results">
-    <p *ngIf="ingredients.length < 1 && hasQuery">No ingredients found.</p>
-    <ng-template ngFor let-ingredient [ngForOf]="ingredients" let-i="index">
-        <hr *ngIf="i > 0" />
-        <p>{{ingredient.name}}</p>
-    </ng-template>
-</section>
+<form class="example-form" >
+    <mat-form-field class="example-full-width" style="width: 100%">
+        <mat-chip-list #chipList>
+            <mat-chip style="margin-top:0.4em;" *ngFor="let option of  this.chefService.searchOption" (removed)="removeOption(option)">
+
+                <span>{{option['name']}}</span>
+
+                <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+            <input #autocompleteInput type="text" placeholder="Enter name" aria-label="Number" matInput [formControl]="myControl"
+                   [matAutocomplete]="auto" [matChipInputFor]="chipList">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                <mat-option *ngFor="let option of autoCompleteList" [value]="option" (onSelectionChange)="filterIngredientList($event)">
+                    {{option['name']}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-chip-list>
+
+    </mat-form-field>
+
+</form>
+
+
+
+
+

@@ -30,8 +30,12 @@
     <div class="content">
 
       <!-- ingredient search bar -->
-      <div>
-        <app-search-bar></app-search-bar>
+      <div style="margin:auto; width: 70%; margin-top: 30px;">
+        <app-search-bar (onSelectedOption)="onSelectedFilter($event)"></app-search-bar>
+      </div>
+      <h2 style="text-align:center">Data</h2>
+      <div *ngFor="let ingredient of ingredients" class="group">
+        <p><b>Item :</b>{{ingredient.name}}</p>
       </div>
 
       <!-- if user has ingrediants -->
