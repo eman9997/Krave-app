@@ -20,17 +20,11 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSelectedFilter($event: any): void {
-    this.getFilteredExpenseList();
+  onSelectedIngredient($event: any): void {
+    this.addIngredientToFridge();
   }
 
-  getFilteredExpenseList(): void {
-    if (this.chefService.searchOption.length > 0) {
-      this.ingredients = this.chefService.filteredListOptions();
-    }
-    else {
-      this.ingredients = this.chefService.ingredientsData;
-    }
-
+  addIngredientToFridge(): void {
+    console.log('Adding to fridge');
   }
 }
