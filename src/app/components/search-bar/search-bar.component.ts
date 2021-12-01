@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ChefService, Ingredient } from '../../services/chef.service';
-
+import { ChefService } from '../../services/chef.service';
+import { Ingredient } from '../../models/ingredient';
 
 @Component({
   selector: 'app-search-bar',
@@ -14,7 +14,7 @@ export class SearchBarComponent implements OnInit {
   autoCompleteList: Array<Ingredient> = [];
 
   @ViewChild('autocompleteInput') autocompleteInput: ElementRef | undefined;
-  @Output() selectedOption = new EventEmitter();
+  @Output() selectedOption = new EventEmitter<Ingredient>();
 
   constructor(
       public chefService: ChefService

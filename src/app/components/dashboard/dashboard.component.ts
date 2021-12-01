@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChefService, Ingredient } from '../../services/chef.service';
-
+import { Ingredient } from '../../models/ingredient';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,21 +9,16 @@ import { ChefService, Ingredient } from '../../services/chef.service';
 
 export class DashboardComponent implements OnInit {
   sideBarOpened = false;
-  // temporary list just to keep going on the UI
-  ingredientList: string[] = [];
-  ingredients: Ingredient[] | undefined = [];
-
-  constructor(private chefService: ChefService) {
-  }
+  fridge: Ingredient[] = [];
 
   ngOnInit(): void {
   }
 
-  onSelectedIngredient($event: any): void {
-    this.addIngredientToFridge();
+  onSelectedIngredient($event: Ingredient): void {
+    this.addIngredientToFridge($event);
   }
 
-  addIngredientToFridge(): void {
-    console.log('Adding to fridge');
+  addIngredientToFridge(ingredient: Ingredient): void {
+    console.log(`Adding ${ingredient.name} to fridge`);
   }
 }

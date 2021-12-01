@@ -1,4 +1,4 @@
-# compiled output
+# compiled outputdotenv
 /dist
 /tmp
 /out-tsc
@@ -17,3 +17,6 @@
 
 # IDE - VSCode
 .vscode/*
+
+# Secrets
+/env.json
