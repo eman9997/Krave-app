@@ -1,5 +1,6 @@
 # Krave Food Application
 https://krave-csudh.firebaseapp.com/
+
 Will be built using A full stack that consist of
 - Angular on the frontend
 - Nodejs with Typescript on the backend
